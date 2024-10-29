@@ -8,6 +8,7 @@ interface SeatMatrixProps {
   colSize?: number;
   invalidRow?: number[];
   invalidCol?: number[];
+  selectedSeats?: { row: number; col: number }[];
   filledSeats?: { row: number; col: number }[];
   onSeatClick: (
     rowIndex: number,
@@ -21,6 +22,7 @@ const SeatMatrix: React.FC<SeatMatrixProps> = ({
   colSize = 12,
   invalidRow = [4],
   invalidCol = [9],
+  selectedSeats = [],
   filledSeats = [],
   onSeatClick,
 }) => {
@@ -31,6 +33,7 @@ const SeatMatrix: React.FC<SeatMatrixProps> = ({
         if (invalidRow.includes(rowIndex) || invalidCol.includes(colIndex)) {
           return "invalid";
         }
+
         if (
           filledSeats.some(
             (seat) => seat.row === rowIndex && seat.col === colIndex
@@ -38,6 +41,15 @@ const SeatMatrix: React.FC<SeatMatrixProps> = ({
         ) {
           return "filled";
         }
+
+        if (
+          selectedSeats.some(
+            (seat) => seat.row === rowIndex && seat.col === colIndex
+          )
+        ) {
+          return "selected";
+        }
+
         return "vacant";
       })
   );

@@ -17,7 +17,7 @@ const AmountAndCartContainer: React.FC<AmountAndCartContainerProps> = ({
         <div className="flex-1">
           <p className="text-white font-medium text-xs">Total Price:</p>
           <h6 className="font-semibold text-4xl text-[#33B528]">
-            ${totalAmount}
+            ${totalAmount.toFixed(2)}
           </h6>
         </div>
 

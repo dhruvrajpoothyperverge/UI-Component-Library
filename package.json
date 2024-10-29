@@ -1,6 +1,6 @@
 {
   "name": "mta-components",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "An UI components library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

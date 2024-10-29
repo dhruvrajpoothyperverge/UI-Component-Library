@@ -1,15 +1,22 @@
 import React from "react";
 
+interface BuffetItem {
+  image: string;
+  label: string;
+  items: string[];
+  price: number;
+}
+
 interface BookingSummaryData {
   movie: string;
   adult: number;
   child: number;
   session: string;
   seatNumbers: string[];
-  buffetProducts: string[];
+  buffetProducts: BuffetItem[];
   buffetTotal: number;
+  ticketTotal: number;
   theater: string;
-  amount: number;
 }
 
 interface BookingSummaryProps {
@@ -26,19 +33,19 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data }) => {
     theater,
     buffetProducts = [],
     buffetTotal = 0,
-    amount,
+    ticketTotal,
   } = data;
 
   return (
-    <div className="flex p-5 bg-black justify-between rounded-xl">
+    <div className="flex gap-4 p-5 bg-black justify-between rounded-xl">
       <div className="flex flex-col gap-2.5 text-[9px]">
         <p className="text-[rgba(255,255,255,0.37)]">Movie: {movie}</p>
 
         <p className="text-white">
           Ticket Count: {adult > 0 && `${adult} Adult`}{" "}
-          {child > 0 && `{child>0 && ${child} Child`}{" "}
+          {child > 0 && `${child} Child`}{" "}
           <span className="text-[rgba(51,181,40,1)]">
-            &#40; ${amount} &#41;
+            &#40; ${ticketTotal} &#41;
           </span>
         </p>
 
@@ -50,7 +57,10 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data }) => {
         </p>
 
         <p className="text-[rgba(255,255,255,0.37)]">
-          Buffet Products: {buffetProducts.length === 0 ? "None" : ""}{" "}
+          Buffet Products:{" "}
+          {buffetProducts.length === 0
+            ? "None"
+            : buffetProducts.map((item) => item?.label).join(", ")}{" "}
           <span className={`${buffetTotal > 0 && "text-[rgba(51,181,40,1)]"}`}>
             &#40; ${buffetTotal} &#41;
           </span>
@@ -66,7 +76,7 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data }) => {
           Total Amount
         </h6>
         <h4 className="text-[rgba(51,181,40,1)] text-[32px]">
-          ${amount.toFixed(2)}
+          ${(ticketTotal + buffetTotal).toFixed(2)}
         </h4>
       </div>
     </div>

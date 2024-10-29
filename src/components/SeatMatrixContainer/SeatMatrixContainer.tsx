@@ -8,6 +8,7 @@ interface SeatMatrixContainerProps {
   colSize?: number;
   invalidRow?: number[];
   invalidCol?: number[];
+  selectedSeats?: { row: number; col: number }[];
   filledSeats?: { row: number; col: number }[];
   onSeatClick: (
     rowIndex: number,
@@ -21,6 +22,7 @@ const SeatMatrixContainer: React.FC<SeatMatrixContainerProps> = ({
   colSize,
   invalidRow,
   invalidCol,
+  selectedSeats,
   filledSeats,
   onSeatClick,
 }) => {
@@ -28,7 +30,10 @@ const SeatMatrixContainer: React.FC<SeatMatrixContainerProps> = ({
     <div>
       <div>
         <p className="text-center font-semibold text-lg text-white">Screen</p>
-        <img src="/src/assets/screen.png" className="w-full" />
+        <img
+          src="https://res.cloudinary.com/dqofbcsua/image/upload/v1730229256/screen_mxbw5w.png"
+          className="w-full"
+        />
       </div>
 
       <SeatMatrix
@@ -36,6 +41,7 @@ const SeatMatrixContainer: React.FC<SeatMatrixContainerProps> = ({
         colSize={colSize}
         invalidRow={invalidRow}
         invalidCol={invalidCol}
+        selectedSeats={selectedSeats}
         filledSeats={filledSeats}
         onSeatClick={onSeatClick}
       />

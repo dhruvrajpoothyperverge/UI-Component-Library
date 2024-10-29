@@ -49,7 +49,7 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ data }) => {
           <span className="font-light text-xs">&#40; {rating} / 5 &#41;</span>
         </div>
         <div className="flex items-center gap-1.5 font-light text-xs">
-          <img src="/src/assets/imdb.png" />
+          <img src="https://res.cloudinary.com/dqofbcsua/image/upload/v1730178198/ptv0k3nv5o699qejsqph.png" />
           <span>{imdb}</span>
         </div>
       </div>
