@@ -1,10 +1,8 @@
 import React from "react";
 
-interface BuffetItem {
-  image: string;
+interface SelectedFoodItem {
   label: string;
-  items: string[];
-  price: number;
+  quantity: number;
 }
 
 interface BookingSummaryData {
@@ -13,7 +11,7 @@ interface BookingSummaryData {
   child: number;
   session: string;
   seatNumbers: string[];
-  buffetProducts: BuffetItem[];
+  buffetProducts: SelectedFoodItem[];
   buffetTotal: number;
   ticketTotal: number;
   theater: string;

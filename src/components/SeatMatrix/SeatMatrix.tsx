@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Seat from "../Seat/Seat";
 
 type SeatStatus = "vacant" | "filled" | "selected" | "invalid";
@@ -26,7 +26,7 @@ const SeatMatrix: React.FC<SeatMatrixProps> = ({
   filledSeats = [],
   onSeatClick,
 }) => {
-  const initialSeats: SeatStatus[][] = Array.from(
+  const seats: SeatStatus[][] = Array.from(
     { length: rowSize },
     (_, rowIndex) =>
       Array.from({ length: colSize }, (_, colIndex) => {
@@ -54,29 +54,6 @@ const SeatMatrix: React.FC<SeatMatrixProps> = ({
       })
   );
 
-  const [seats, setSeats] = useState<SeatStatus[][]>(initialSeats);
-
-  const toggleSeat = (rowIndex: number, seatIndex: number) => {
-    setSeats((prevSeats) => {
-      const newSeats = prevSeats.map((row, rIndex) =>
-        rIndex === rowIndex
-          ? row.map((seat, sIndex) => {
-              if (sIndex === seatIndex) {
-                return seat === "vacant" ? "selected" : "vacant";
-              }
-              return seat;
-            })
-          : row
-      );
-
-      return newSeats;
-    });
-
-    const currentSeatStatus = seats[rowIndex][seatIndex];
-    const status = currentSeatStatus === "vacant" ? "selected" : "vacant";
-    onSeatClick(rowIndex, seatIndex, status);
-  };
-
   return (
     <div className="flex flex-col items-center min-w-full overflow-x-auto flex-nowrap">
       {seats.map((row, rowIndex) => (
@@ -87,7 +64,7 @@ const SeatMatrix: React.FC<SeatMatrixProps> = ({
               className="mx-0.5"
               onClick={() =>
                 (col === "vacant" || col === "selected") &&
-                toggleSeat(rowIndex, colIndex)
+                onSeatClick(rowIndex, colIndex, col === "vacant" ? "selected" : "vacant")
               }
             >
               <Seat status={col} />

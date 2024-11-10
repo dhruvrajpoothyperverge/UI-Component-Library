@@ -17,7 +17,7 @@ const MovieInfoSummary: React.FC<MovieInfoSummaryProps> = ({
       <img
         src={image}
         alt=""
-        className="w-full h-full object-contain rounded-2xl"
+        className="w-full h-full object-fill rounded-2xl"
       />
 
       <div className="flex justify-between items-center absolute bottom-0 left-0 backdrop-blur-sm w-full px-3 py-1.5 text-white bg-[rgba(0,0,0,0.7)] rounded-b-2xl">

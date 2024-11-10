@@ -8,6 +8,7 @@ interface MovieInfoContainerProps {
   onHeartClick: () => void;
   videoLink: string;
   videoThumbnail: string;
+  isFavorite?: boolean;
   movieInfo: {
     image: string;
     title: string;
@@ -20,6 +21,7 @@ interface MovieInfoContainerProps {
 const MovieInfoContainer: React.FC<MovieInfoContainerProps> = ({
   onBackClick,
   onHeartClick,
+  isFavorite = false,
   videoLink,
   videoThumbnail,
   movieInfo,
@@ -43,7 +45,11 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = ({
             className="bg-[rgba(0,0,0,0.44)] p-1.5 rounded-full"
             onClick={onHeartClick}
           >
-            <Heart className="w-5 h-5" />
+            <Heart
+              className={`w-5 h-5 ${
+                isFavorite ? "text-pink-500" : "text-white"
+              }`}
+            />
           </button>
         </div>
       </div>

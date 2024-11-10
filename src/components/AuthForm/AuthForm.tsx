@@ -31,30 +31,30 @@ const AuthForm: React.FC<AuthFormProps> = ({
     onSubmit();
   };
 
+  const isAnyInputEmpty = inputArray.some((item) => !item.value.trim());
+
   return (
     <div>
       <div className="w-fit mx-auto mb-14">
         <Logo className="text-[28px]" />
       </div>
 
-      {description != "" && (
+      {description !== "" && (
         <p className="font-medium text-xs text-white text-center mb-8">
           {description}
         </p>
       )}
 
       <form onSubmit={onFormSubmit} className="flex flex-col gap-4">
-        {inputArray.map((item, index) => {
-          return (
-            <Input
-              key={index}
-              type={item.type}
-              placeholder={item.placeholder}
-              onChange={item.onChange}
-              required
-            />
-          );
-        })}
+        {inputArray.map((item, index) => (
+          <Input
+            key={index}
+            type={item.type}
+            placeholder={item.placeholder}
+            onChange={item.onChange}
+            required
+          />
+        ))}
 
         <Button
           variant="primarydark"
@@ -62,6 +62,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           isGlow={true}
           type="submit"
           className="mt-4"
+          disabled={isAnyInputEmpty}
         />
       </form>
 

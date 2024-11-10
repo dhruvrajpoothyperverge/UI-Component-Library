@@ -24,16 +24,16 @@ const SelectQuantity: React.FC<SelectQuantityProps> = ({
   return (
     <div
       className={`flex ${
-        align === "vertical" ? "flex-col" : "flex-row"
+        align === "vertical" ? "flex-col-reverse" : "flex-row"
       } items-center gap-4`}
     >
-      <div
-        onClick={isIncreaseDisabled ? undefined : onIncrease}
-        className={`border border-white rounded-full w-[30px] h-[30px] flex items-center justify-center text-3xl cursor-pointer text-white ${
-          isIncreaseDisabled && "opacity-40"
+       <div
+        onClick={isDecreaseDisabled ? undefined : onDecrease}
+        className={`border rounded-full w-[30px] h-[30px] flex items-center justify-center text-3xl cursor-pointer text-white ${
+          isDecreaseDisabled && "opacity-40"
         }`}
       >
-        <Plus/>
+        <Minus/>
       </div>
 
       <div
@@ -46,12 +46,12 @@ const SelectQuantity: React.FC<SelectQuantityProps> = ({
       </div>
 
       <div
-        onClick={isDecreaseDisabled ? undefined : onDecrease}
-        className={`border rounded-full w-[30px] h-[30px] flex items-center justify-center text-3xl cursor-pointer text-white ${
-          isDecreaseDisabled && "opacity-40"
+        onClick={isIncreaseDisabled ? undefined : onIncrease}
+        className={`border border-white rounded-full w-[30px] h-[30px] flex items-center justify-center text-3xl cursor-pointer text-white ${
+          isIncreaseDisabled && "opacity-40"
         }`}
       >
-        <Minus/>
+        <Plus/>
       </div>
     </div>
   );
