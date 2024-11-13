@@ -34,9 +34,7 @@ export { default as SeatMatrixContainer } from "./components/SeatMatrixContainer
 export { default as SelectDiv } from "./components/SelectDiv/SelectDiv";
 export { default as SelectDivContainer } from "./components/SelectDivContainer/SelectDivContainer";
 export { default as SelectQuantity } from "./components/SelectQuantity/SelectQuantity";
-export { default as SignInContainer } from "./components/SignInContainer/SignInContainer";
 export { default as SignInSignUp } from "./components/SignInSignUp/SignInSignUp";
-export { default as SignUpContainer } from "./components/SignUpContainer/SignUpContainer";
 export { default as Slider } from "./components/Slider/Slider";
 export { default as StepIndicator } from "./components/StepIndicator/StepIndicator";
 export { default as StickyBottomContainer } from "./components/StickyBottomContainer/StickyBottomContainer";

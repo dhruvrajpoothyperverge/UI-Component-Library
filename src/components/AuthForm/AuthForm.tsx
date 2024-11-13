@@ -17,6 +17,7 @@ interface AuthFormProps {
   description?: string;
   step: "signin" | "signup";
   footerlink: string;
+  isDisabled?: boolean;
 }
 
 const AuthForm: React.FC<AuthFormProps> = ({
@@ -25,13 +26,12 @@ const AuthForm: React.FC<AuthFormProps> = ({
   description,
   step,
   footerlink,
+  isDisabled = false,
 }) => {
   const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit();
   };
-
-  const isAnyInputEmpty = inputArray.some((item) => !item.value.trim());
 
   return (
     <div>
@@ -62,7 +62,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           isGlow={true}
           type="submit"
           className="mt-4"
-          disabled={isAnyInputEmpty}
+          disabled={isDisabled}
         />
       </form>
 

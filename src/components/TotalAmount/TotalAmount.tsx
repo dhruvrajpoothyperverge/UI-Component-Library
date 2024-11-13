@@ -5,9 +5,14 @@ import Button from "../Button/Button";
 interface TotalAmountProps {
   amount: number;
   onClick: () => void;
+  isDisabled?: boolean;
 }
 
-const TotalAmount: React.FC<TotalAmountProps> = ({ amount, onClick }) => {
+const TotalAmount: React.FC<TotalAmountProps> = ({
+  amount,
+  onClick,
+  isDisabled = true,
+}) => {
   return (
     <div className="flex flex-col items-center bg-[rgba(0,0,0,0.5)] backdrop-blur-md p-5 fixed bottom-0 left-0 w-full">
       <h6 className="text-white underline font-semibold underline-offset-2 mb-4">
@@ -22,6 +27,7 @@ const TotalAmount: React.FC<TotalAmountProps> = ({ amount, onClick }) => {
         className="w-full"
         icon={<RightArrow />}
         onClick={onClick}
+        disabled={isDisabled}
       />
     </div>
   );
