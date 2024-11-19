@@ -1,4 +1,4 @@
-export default function Ticket(props: React.SVGProps<SVGSVGElement>) {
+export default function TicketIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="20"

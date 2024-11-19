@@ -14,7 +14,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
       {data.map((item, index) => {
         return (
           <Link to={item.link} className="shrink-0" key={index}>
-            <img src={item.image} alt="" />
+            <img src={item.image} alt="" className="rounded-xl object-fill"/>
           </Link>
         );
       })}

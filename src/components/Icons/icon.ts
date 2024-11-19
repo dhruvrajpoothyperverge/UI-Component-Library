@@ -11,5 +11,5 @@ export { default as Play } from "./Icons/play";
 export { default as Plus } from "./Icons/plus";
 export { default as RightArrow } from "./Icons/rightarrow";
 export { default as Star } from "./Icons/star";
-export { default as Ticket } from "./Icons/ticket";
+export { default as TicketIcon } from "./Icons/ticketicon";
 export { default as UnknownError } from "./Icons/unknownerror";

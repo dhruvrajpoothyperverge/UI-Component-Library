@@ -18,7 +18,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         className={`w-[150px] h-[200px] rounded-xl bg-gray-900 ${className}`}
         {...props}
       >
-        <img src={image} className="w-full h-full bg-gray-900" />
+        <img src={image} className="w-full h-full bg-gray-900 rounded-xl object-fill" />
       </div>
     </Link>
   );

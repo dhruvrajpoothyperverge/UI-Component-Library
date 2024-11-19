@@ -9,8 +9,8 @@ interface QRcodeContainerProps {
 
 const QRcodeContainer: React.FC<QRcodeContainerProps> = ({
   value,
-  width,
-  height,
+  width = 256,
+  height = 256,
 }) => {
   return (
     <div className="flex flex-col items-center text-center gap-5">

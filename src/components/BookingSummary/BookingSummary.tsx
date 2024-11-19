@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
 interface SelectedFoodItem {
   label: string;
@@ -17,11 +17,11 @@ interface BookingSummaryData {
   theater: string;
 }
 
-interface BookingSummaryProps {
+interface BookingSummaryProps extends HTMLAttributes<HTMLDivElement> {
   data: BookingSummaryData;
 }
 
-const BookingSummary: React.FC<BookingSummaryProps> = ({ data }) => {
+const BookingSummary: React.FC<BookingSummaryProps> = ({ data, ...props }) => {
   const {
     movie,
     adult,
@@ -35,7 +35,10 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data }) => {
   } = data;
 
   return (
-    <div className="flex gap-4 p-5 bg-black justify-between rounded-xl">
+    <div
+      className="flex gap-4 p-5 bg-black justify-between rounded-xl"
+      {...props}
+    >
       <div className="flex flex-col gap-2.5 text-[9px]">
         <p className="text-[rgba(255,255,255,0.37)]">Movie: {movie}</p>
 

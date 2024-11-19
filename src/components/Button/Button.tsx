@@ -3,7 +3,7 @@ import React, { ReactNode, ButtonHTMLAttributes } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   icon?: ReactNode;
-  variant?: "primary" | "secondary" | "primarydark" | "tertiary";
+  variant?: "primary" | "secondary" | "primarydark" | "tertiary" | "outline";
   size?: "small" | "medium" | "large";
   isGlow?: boolean;
 }
@@ -13,6 +13,7 @@ const variantClasses = {
   primarydark: "bg-primarydark text-white",
   secondary: "bg-black text-white",
   tertiary: "bg-white text-primary",
+  outline: "bg-transparent border-2 border-primary text-primary",
 };
 
 const sizeClasses = {
@@ -48,7 +49,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {text}
 
-      <div className="absolute right-6">{icon}</div>
+      <div className={`${text && "absolute right-6"}`}>{icon}</div>
     </button>
   );
 };
