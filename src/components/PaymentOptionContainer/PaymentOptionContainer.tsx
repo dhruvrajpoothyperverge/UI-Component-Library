@@ -10,16 +10,14 @@ interface PaymentOptionContainerProps {
 const PaymentOptionContainer: React.FC<PaymentOptionContainerProps> = ({
   data,
   selectedOption,
-  onSelect
+  onSelect,
 }) => {
-
   return (
     <div className="flex flex-col gap-4">
       <p className="font-semibold text-[rgba(255,255,255,0.52)]">
         Select Payment Options
       </p>
-
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-5">
         {data.map((item, index) => (
           <PaymentOption
             key={index}

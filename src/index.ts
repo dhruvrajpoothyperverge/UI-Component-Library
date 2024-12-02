@@ -22,7 +22,7 @@ export { default as MovieInfo } from "./components/MovieInfo/MovieInfo";
 export { default as MovieInfoContainer } from "./components/MovieInfoContainer/MovieInfoContainer";
 export { default as MovieInfoSummary } from "./components/MovieInfoSummary/MovieInfoSummary";
 export { default as Navbar } from "./components/Navbar/Navbar";
-export { default as NotificationIcon } from "./components/NotificationIcon/NotificationIcon";
+export { default as Notification } from "./components/Notification/Notification";
 export { default as PaymentOption } from "./components/PaymentOption/PaymentOption";
 export { default as PaymentOptionContainer } from "./components/PaymentOptionContainer/PaymentOptionContainer";
 export { default as PaymentStatus } from "./components/PaymentStatus/PaymentStatus";

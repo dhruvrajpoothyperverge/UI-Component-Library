@@ -6,7 +6,7 @@ export { default as Heart } from "./Icons/heart";
 export { default as Home } from "./Icons/home";
 export { default as LeftArrow } from "./Icons/leftarrow";
 export { default as Minus } from "./Icons/minus";
-export { default as Notification } from "./Icons/notification";
+export { default as NotificationIcon } from "./Icons/notification";
 export { default as Play } from "./Icons/play";
 export { default as Plus } from "./Icons/plus";
 export { default as RightArrow } from "./Icons/rightarrow";
