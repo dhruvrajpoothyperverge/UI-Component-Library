@@ -1,8 +1,11 @@
 import "./index.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
+export { SkeletonTheme } from "react-loading-skeleton";
 export { default as AmountAndCartContainer } from "./components/AmountAndCartContainer/AmountAndCartContainer";
 export { default as AuthForm } from "./components/AuthForm/AuthForm";
 export { default as BackgroundContainer } from "./components/BackgroundContainer/BackgroundContainer";
+export { default as BookedTicketContainer } from "./components/BookedTicketContainer/BookedTicketContainer";
 export { default as BookingSummary } from "./components/BookingSummary/BookingSummary";
 export { default as Button } from "./components/Button/Button";
 export { default as BuyTicketContainer } from "./components/BuyTicketContainer/BuyTicketContainer";
@@ -11,6 +14,7 @@ export { default as CarouselImage } from "./components/CarouselImage/CarouselIma
 export { default as DatePicker } from "./components/DatePicker/DatePicker";
 export { default as Description } from "./components/Description/Description";
 export { default as Divider } from "./components/Divider/Divider";
+export { default as FavoritesContainer } from "./components/FavoritesContainer/FavoritesContainer";
 export { default as FoodItem } from "./components/FoodItem/FoodItem";
 export { default as FoodItemContainer } from "./components/FoodItemContainer/FoodItemContainer";
 export { default as Heading } from "./components/Heading/Heading";

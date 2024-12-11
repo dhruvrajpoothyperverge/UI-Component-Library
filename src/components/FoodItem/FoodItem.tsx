@@ -2,7 +2,7 @@ import React from "react";
 import SelectQuantity from "../SelectQuantity/SelectQuantity";
 
 interface FoodItemProps {
-  image:string;
+  image: string;
   label: string;
   items: string[];
   quantity: number;
@@ -30,17 +30,14 @@ const FoodItem: React.FC<FoodItemProps> = ({
       <div className="flex flex-col justify-between ml-2">
         <div>
           <h5 className="text-base font-medium text-white">{label}</h5>
-
-          {items.map((item, index) => {
-            return (
-              <p
-                className="text-[10px] text-[rgba(255,255,255,0.44)]"
-                key={index}
-              >
-                {item}
-              </p>
-            );
-          })}
+          {items.map((item, index) => (
+            <p
+              className="text-[10px] text-[rgba(255,255,255,0.44)]"
+              key={index}
+            >
+              {item}
+            </p>
+          ))}
         </div>
 
         <div>

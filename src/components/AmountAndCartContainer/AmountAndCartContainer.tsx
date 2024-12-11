@@ -5,11 +5,13 @@ import StickyBottomContainer from "../StickyBottomContainer/StickyBottomContaine
 interface AmountAndCartContainerProps {
   totalAmount: number;
   addToCart: () => void;
+  disabled?: boolean;
 }
 
 const AmountAndCartContainer: React.FC<AmountAndCartContainerProps> = ({
   totalAmount,
   addToCart,
+  disabled = false,
 }) => {
   return (
     <StickyBottomContainer>
@@ -26,6 +28,7 @@ const AmountAndCartContainer: React.FC<AmountAndCartContainerProps> = ({
           size="small"
           className="flex-1"
           onClick={addToCart}
+          disabled={disabled}
         />
       </div>
     </StickyBottomContainer>

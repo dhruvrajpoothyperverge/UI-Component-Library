@@ -19,7 +19,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
           className={`text-center cursor-pointer px-5 py-2 rounded-md transition-all duration-300 ease-in-out transform ${
             date === selectedDate
               ? "bg-primary text-white font-semibold scale-105 shadow-lg"
-              : "bg-gray-100 text-gray-800 hover:bg-gray-200 hover:scale-105"
+              : "bg-gray-100 text-gray-800 hover:bg-gray-200 hover:scale-105 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
           }`}
           onClick={() => onDateSelect(date)}
         >

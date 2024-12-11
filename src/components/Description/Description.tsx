@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface DescriptionProps {
   maxLen?: number;
@@ -16,25 +17,30 @@ const Description: React.FC<DescriptionProps> = ({ maxLen = 150, data }) => {
 
   return (
     <div>
-      <p className="inline text-white">
-        {isExpanded || !shouldTruncate ? (
-          data
-        ) : (
-          <>{data.substring(0, maxLen)}...</>
-        )}
-      </p>
+      <motion.div
+        className="text-white"
+        initial={{ opacity: 0, height: 0 }}
+        animate={{
+          opacity: 1,
+          height: isExpanded || !shouldTruncate ? "auto" : "75px",
+        }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        style={{ overflow: "hidden" }}
+      >
+        <p>
+          {isExpanded || !shouldTruncate
+            ? data
+            : `${data.substring(0, maxLen)}...`}
+        </p>
+      </motion.div>
 
-      {shouldTruncate && (
-        <>
-          &nbsp;&nbsp;
-          <button
-            onClick={toggleExpand}
-            className="text-primary underline font-light cursor-pointer"
-          >
-            {isExpanded ? "Show Less" : "See All"}
-          </button>
-        </>
-      )}
+      <button
+        onClick={toggleExpand}
+        className="text-primary underline font-light cursor-pointer"
+      >
+        {isExpanded ? "Show Less" : "Show All"}
+      </button>
     </div>
   );
 };
