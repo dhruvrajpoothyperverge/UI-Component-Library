@@ -53,12 +53,14 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = ({
           <button
             className="rounded-lg bg-white text-primary p-2.5"
             onClick={onBackClick}
+            aria-label="back button"
           >
             <LeftArrow />
           </button>
           <button
             className="bg-[rgba(0,0,0,0.44)] p-1.5 rounded-full"
             onClick={onHeartClick}
+            aria-label="favorite button"
           >
             <Heart
               className={`w-5 h-5 ${

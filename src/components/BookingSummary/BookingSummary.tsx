@@ -39,8 +39,8 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data, ...props }) => {
       className="flex gap-4 p-5 bg-black justify-between rounded-xl"
       {...props}
     >
-      <div className="flex flex-col gap-2.5 text-[9px]">
-        <p className="text-[rgba(255,255,255,0.37)]">Movie: {movie}</p>
+      <div className="flex flex-col gap-2.5 text-xs">
+        <p className="text-[rgba(255,255,255,0.87)]">Movie: {movie}</p>
 
         <p className="text-white">
           Ticket Count: {adult > 0 && `${adult} Adult`}{" "}
@@ -50,14 +50,14 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data, ...props }) => {
           </span>
         </p>
 
-        <p className="text-[rgba(255,255,255,0.37)]">Session: {session}</p>
+        <p className="text-[rgba(255,255,255,0.87)]">Session: {session}</p>
 
         <p className="text-white">
           Seat Number: &nbsp;
           {seatNumbers.join(", ")}
         </p>
 
-        <p className="text-[rgba(255,255,255,0.37)]">
+        <p className="text-[rgba(255,255,255,0.87)]">
           Buffet Products:{" "}
           {buffetProducts.length === 0
             ? "None"
@@ -67,15 +67,15 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({ data, ...props }) => {
           </span>
         </p>
 
-        <p className="text-[rgba(255,255,255,0.37)]">
+        <p className="text-[rgba(255,255,255,0.87)]">
           Movie Theater: {theater}
         </p>
       </div>
 
       <div className="flex flex-col items-center justify-center gap-4">
-        <h6 className="text-[9px] text-white underline font-semibold underline-offset-2">
+        <h4 className="text-sm text-white underline font-semibold underline-offset-2">
           Total Amount
-        </h6>
+        </h4>
         <h4 className="text-[rgba(51,181,40,1)] text-[32px]">
           ${(ticketTotal + buffetTotal).toFixed(2)}
         </h4>

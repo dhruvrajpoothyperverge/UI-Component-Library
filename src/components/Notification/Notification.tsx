@@ -44,7 +44,7 @@ const Notification: React.FC<NotificationProps> = ({
   return (
     <div className="relative" onClick={toggleNotification}>
       <div ref={iconRef}>
-        <button className="border border-primary p-2.5 rounded-full relative">
+        <button className="border border-primary p-2.5 rounded-full relative" aria-label="Notification icon">
           <NotificationIcon className="text-primary" />
           {notifications.length > 0 && (
             <div className="w-2.5 h-2.5 bg-white rounded-full absolute top-0 right-0" />

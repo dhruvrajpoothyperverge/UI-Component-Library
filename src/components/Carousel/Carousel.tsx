@@ -55,7 +55,7 @@ const Carousel: React.FC<CarouselProps> = ({
           ? Array.from({ length: 5 }).map((_, index) => (
               <SwiperSlide key={index} className="pb-8">
                 <Skeleton
-                  className="aspect-[2/1] max-h-[50vh]"
+                  className="aspect-[2/1] max-h-[50vh] w-full"
                   borderRadius={"16px"}
                 />
               </SwiperSlide>

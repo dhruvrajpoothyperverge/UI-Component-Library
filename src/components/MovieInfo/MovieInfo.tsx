@@ -24,9 +24,13 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ data }) => {
 
     return (
       <div className="flex gap-[1px]">
-        {Array.from({ length: full }, (_, index) => <Star key={index} className="text-[#E49600]" />)}
+        {Array.from({ length: full }, (_, index) => (
+          <Star key={index} className="text-[#E49600]" />
+        ))}
         {hasHalf && <HalfStar className="text-[#E49600]" />}
-        {Array.from({ length: maxRating - full - 1 }, (_, index) => <Star key={index} className="text-white" />)}
+        {Array.from({ length: maxRating - full - 1 }, (_, index) => (
+          <Star key={index} className="text-white" />
+        ))}
       </div>
     );
   }, [rating]);
@@ -38,10 +42,19 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ data }) => {
         <h2 className="text-xl font-semibold">{title}</h2>
         <p className="text-xs font-light">{productionHouse}</p>
         <div className="flex gap-1 items-center">
-          {renderStar} <span className="font-light text-xs">({rating} / 5)</span>
+          {renderStar}{" "}
+          <span className="font-light text-xs">({rating} / 5)</span>
         </div>
         <div className="flex items-center gap-1.5 font-light text-xs">
-          <img src="https://res.cloudinary.com/dqofbcsua/image/upload/v1730178198/ptv0k3nv5o699qejsqph.png" />
+          <img
+            src="https://res.cloudinary.com/dqofbcsua/image/upload/c_scale,w_40/v1730178198/ptv0k3nv5o699qejsqph.png"
+            srcSet="
+    https://res.cloudinary.com/dqofbcsua/image/upload/c_scale,w_40/v1730178198/ptv0k3nv5o699qejsqph.png 1x,
+    https://res.cloudinary.com/dqofbcsua/image/upload/c_scale,w_80/v1730178198/ptv0k3nv5o699qejsqph.png 2x
+  "
+            alt="IMDB Rating"
+          />
+
           <span>{imdb}</span>
         </div>
       </div>

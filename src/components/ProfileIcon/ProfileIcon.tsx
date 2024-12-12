@@ -20,9 +20,12 @@ const ProfileIcon: React.FC<ProfileIconProps> = ({
   return (
     <img
       src={imgSrc}
-      alt="Profile"
+      alt="User profile picture"
       onError={handleError}
-      className={`w-10 h-10 rounded-full overflow-hidden bg-blue-400 shadow-first object-fill ${className}`}
+      loading="lazy"
+      className={`w-10 h-10 rounded-full object-cover bg-blue-400 shadow-md ${className}`}
+      width={40}
+      height={40}
       {...props}
     />
   );

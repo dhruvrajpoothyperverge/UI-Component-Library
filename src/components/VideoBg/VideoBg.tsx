@@ -32,6 +32,7 @@ const VideoBg: React.FC<VideoBgProps> = ({ thumbnail, link }) => {
           <button
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white w-14 h-14 rounded-full bg-opacity-50 hover:bg-opacity-40 transition-opacity text-primary"
             onClick={handleVideoClick}
+            aria-label="Video play pause button"
           >
             <Play />
           </button>

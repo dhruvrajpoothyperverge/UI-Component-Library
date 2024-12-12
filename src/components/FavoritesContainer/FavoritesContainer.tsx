@@ -17,8 +17,8 @@ const FavoritesContainer: React.FC<FavoritesContainerProps> = ({
     return (
       <div className="flex gap-4 flex-wrap">
         {Array.from({ length: 4 }).map((_, index) => (
-          <div key={index} className="shrink-0 w-[150px] h-[200px]">
-            <Skeleton borderRadius={"12px"} className="h-full" />
+          <div key={index} className="shrink-0 w-[150px] aspect-[3/4] ">
+            <Skeleton borderRadius={"12px"} className="h-full w-full" />
           </div>
         ))}
       </div>
