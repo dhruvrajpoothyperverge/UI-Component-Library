@@ -18,7 +18,7 @@ const BookedTicketContainer: React.FC<BookedTicketContainerProps> = ({
   if (loading) {
     return (
       <div className="space-y-4">
-        {Array.from({ length: 3 }).map((_, index) => (
+        {Array.from({ length: 2 }).map((_, index) => (
           <div key={index}>
             <Skeleton height={185} width="100%" borderRadius={"12px"} />
           </div>
