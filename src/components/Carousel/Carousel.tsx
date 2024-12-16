@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({
   error,
 }) => {
   if (error) {
-    return <p className="text-center text-red-500">{error}</p>;
+    return <p className="text-red-500">{error}</p>;
   }
 
   return (

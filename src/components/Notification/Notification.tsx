@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NotificationIcon } from "../Icons/icon";
+import Button from "../Button/Button";
 
 interface NotificationProps {
   notifications: { id: string; message: string }[];
   onClear: (id: string) => void;
+  onSubscribe?: () => void;
 }
 
 const Notification: React.FC<NotificationProps> = ({
   notifications,
   onClear,
+  onSubscribe,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const notificationRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +47,10 @@ const Notification: React.FC<NotificationProps> = ({
   return (
     <div className="relative" onClick={toggleNotification}>
       <div ref={iconRef}>
-        <button className="border border-primary p-2.5 rounded-full relative" aria-label="Notification icon">
+        <button
+          className="border border-primary p-2.5 rounded-full relative"
+          aria-label="Notification icon"
+        >
           <NotificationIcon className="text-primary" />
           {notifications.length > 0 && (
             <div className="w-2.5 h-2.5 bg-white rounded-full absolute top-0 right-0" />
@@ -94,6 +100,15 @@ const Notification: React.FC<NotificationProps> = ({
                     </button>
                   </div>
                 ))
+              )}
+
+              {onSubscribe && (
+                <Button
+                  variant="primary"
+                  text="Subscribe"
+                  size="small"
+                  onClick={onSubscribe}
+                />
               )}
             </div>
           </motion.div>
