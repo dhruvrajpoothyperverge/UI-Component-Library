@@ -66,6 +66,7 @@ const Carousel: React.FC<CarouselProps> = ({
                   image={item.image}
                   link={item.link}
                   label={item.label}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                 />
               </SwiperSlide>
             ))}

@@ -4,8 +4,8 @@ import VideoBg from "../VideoBg/VideoBg";
 import MovieInfo from "../MovieInfo/MovieInfo";
 import Slider from "../Slider/Slider";
 import Description from "../Description/Description";
-import HeadingContainer from "../HeadingContainer/HeadingContainer";
 import Skeleton from "react-loading-skeleton";
+import Heading from "../Heading/Heading";
 
 export interface Movie {
   _id: string;
@@ -95,13 +95,14 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = ({
               <Description
                 data={movieInfo?.description || "No description available."}
               />
-              <HeadingContainer label="Images in the movie">
+              <div className="flex flex-col gap-2">
+                <Heading label="Images in the movie" />
                 {movieInfo?.imagesInTheMovie?.length > 0 ? (
                   <Slider data={movieInfo?.imagesInTheMovie} />
                 ) : (
                   <div>No images available for this movie.</div>
                 )}
-              </HeadingContainer>
+              </div>
             </div>
           </>
         )}

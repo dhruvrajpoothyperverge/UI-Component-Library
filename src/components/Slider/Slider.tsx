@@ -42,6 +42,7 @@ const Slider: React.FC<SliderProps> = ({
                 className="rounded-xl"
                 width={182}
                 height={268}
+                fetchPriority={index < 2 ? "high" : "auto"}
               />
             </Link>
           ))}

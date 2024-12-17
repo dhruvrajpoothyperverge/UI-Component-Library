@@ -18,7 +18,6 @@ export { default as FavoritesContainer } from "./components/FavoritesContainer/F
 export { default as FoodItem } from "./components/FoodItem/FoodItem";
 export { default as FoodItemContainer } from "./components/FoodItemContainer/FoodItemContainer";
 export { default as Heading } from "./components/Heading/Heading";
-export { default as HeadingContainer } from "./components/HeadingContainer/HeadingContainer";
 export * from "./components/Icons/icon";
 export { default as Input } from "./components/Input/Input";
 export { default as Logo } from "./components/Logo/Logo";
