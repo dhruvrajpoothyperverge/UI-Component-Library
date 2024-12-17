@@ -26,7 +26,7 @@ const Slider: React.FC<SliderProps> = ({
   }
 
   return (
-    <div className="flex gap-3 flex-nowrap overflow-x-scroll">
+    <div className="flex gap-3 flex-nowrap overflow-x-scroll h-[268px]">
       {isLoading
         ? Array.from({ length: 3 }).map((_, index) => (
             <div key={index} className="w-[182px] h-[268px] shrink-0">

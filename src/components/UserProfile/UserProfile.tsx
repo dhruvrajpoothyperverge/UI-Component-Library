@@ -16,7 +16,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userDetails }) => {
     <div className="max-w-md mx-auto">
       <div className="flex justify-center mb-6">
         <img
-          src={userDetails.profileImage || "/assets/kungfupanda.png"}
+          src={userDetails.profileImage}
           alt="Profile Picture"
           className="rounded-full w-32 h-32 object-cover border-4 border-white"
         />

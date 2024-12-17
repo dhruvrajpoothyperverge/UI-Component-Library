@@ -37,7 +37,7 @@ const Carousel: React.FC<CarouselProps> = ({
   }
 
   return (
-    <div className="relative">
+    <div className="relative aspect-[2/1] max-h-[50vh] ">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={10}
