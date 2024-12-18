@@ -5,14 +5,12 @@ interface CarouselImageProps {
   label: string;
   image: string;
   link: string;
-  fetchPriority?: "high" | "low" | "auto";
 }
 
 const CarouselImage: React.FC<CarouselImageProps> = ({
   label,
   image,
   link,
-  fetchPriority = "auto",
 }) => {
   return (
     <div className="w-full rounded-2xl aspect-[2/1] max-h-[50vh] bg-gray-900 relative">
@@ -22,7 +20,6 @@ const CarouselImage: React.FC<CarouselImageProps> = ({
           srcSet={`${image} 1x, ${image}?resolution=2x 2x`}
           alt="Movie Title Poster"
           className="w-full h-full rounded-2xl object-cover"
-          fetchPriority={fetchPriority}
         />
         <p className="absolute bottom-4 left-4 font-semibold text-xl text-white">
           {label}
