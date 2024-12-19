@@ -96,14 +96,14 @@ const Carousel: React.FC<CarouselProps> = ({
       </div>
 
       <button
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full w-8 h-8"
         onClick={prevSlide}
         aria-label="Previous Slide"
       >
         ◀
       </button>
       <button
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full w-8 h-8"
         onClick={nextSlide}
         aria-label="Next Slide"
       >

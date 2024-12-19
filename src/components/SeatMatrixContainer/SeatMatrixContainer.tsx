@@ -1,7 +1,7 @@
 import React from "react";
 import SeatMatrix from "../SeatMatrix/SeatMatrix";
 
-type SeatStatus = "vacant" | "filled" | "selected" | "invalid";
+type SeatStatus = "vacant" | "filled" | "selected" | "invalid" | "locked";
 
 interface SeatMatrixContainerProps {
   rowSize?: number;
@@ -10,6 +10,7 @@ interface SeatMatrixContainerProps {
   invalidCol?: number[];
   selectedSeats?: { row: number; col: number }[];
   filledSeats?: { row: number; col: number }[];
+  lockedSeats?: { row: number; col: number }[];
   onSeatClick: (
     rowIndex: number,
     seatIndex: number,
@@ -24,6 +25,7 @@ const SeatMatrixContainer: React.FC<SeatMatrixContainerProps> = ({
   invalidCol,
   selectedSeats,
   filledSeats,
+  lockedSeats,
   onSeatClick,
 }) => {
   return (
@@ -43,6 +45,7 @@ const SeatMatrixContainer: React.FC<SeatMatrixContainerProps> = ({
         invalidCol={invalidCol}
         selectedSeats={selectedSeats}
         filledSeats={filledSeats}
+        lockedSeats={lockedSeats}
         onSeatClick={onSeatClick}
       />
     </div>

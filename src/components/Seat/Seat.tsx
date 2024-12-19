@@ -1,7 +1,7 @@
 import React from "react";
 
 interface SeatProps {
-  status: "vacant" | "filled" | "selected" | "invalid";
+  status: "vacant" | "filled" | "selected" | "invalid" | "locked";
 }
 
 const Seat: React.FC<SeatProps> = React.memo(({ status, ...props }) => {
@@ -11,7 +11,7 @@ const Seat: React.FC<SeatProps> = React.memo(({ status, ...props }) => {
         ${
           status === "vacant"
             ? "bg-[rgba(255,255,255,0.53)]"
-            : status === "filled"
+            : status === "filled" || status === "locked"
             ? "bg-primary"
             : status === "selected"
             ? "bg-[rgba(198,110,29,1)]"

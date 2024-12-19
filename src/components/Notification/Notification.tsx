@@ -44,6 +44,14 @@ const Notification: React.FC<NotificationProps> = ({
     e.stopPropagation();
   };
 
+  const handleSubscribeClick = () => {
+    setIsVisible(false);
+
+    if (onSubscribe) {
+      onSubscribe();
+    }
+  };
+
   return (
     <div className="relative" onClick={toggleNotification}>
       <div ref={iconRef}>
@@ -107,7 +115,7 @@ const Notification: React.FC<NotificationProps> = ({
                   variant="primary"
                   text="Subscribe"
                   size="small"
-                  onClick={onSubscribe}
+                  onClick={handleSubscribeClick}
                 />
               )}
             </div>

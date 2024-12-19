@@ -12,6 +12,7 @@ interface Session {
   startTime: string;
   endTime: string;
   filledSeats: Seat[];
+  lockedSeats: Seat[];
 }
 
 interface SessionListProps {
